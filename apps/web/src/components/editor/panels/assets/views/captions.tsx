@@ -18,6 +18,12 @@ import type {
 	TranscriptionLanguage,
 	TranscriptionProgress,
 } from "@/lib/transcription/types";
+import {
+	CAPTION_PRESETS,
+	DEFAULT_CAPTION_PRESET_ID,
+	applyPresetToCaptions,
+} from "@/lib/captions/presets";
+import type { SubtitleCue } from "@/lib/subtitles/types";
 import { transcriptionService } from "@/services/transcription/service";
 import { decodeAudioToFloat32 } from "@/lib/media/audio";
 import { buildCaptionChunks } from "@/lib/transcription/caption";
@@ -30,7 +36,7 @@ import {
 	SectionField,
 	SectionFields,
 } from "@/components/section";
-import { AlertCircleIcon, CloudUploadIcon } from "@hugeicons/core-free-icons";
+import { AlertCircleIcon, CloudUploadIcon, SparklesIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
 	Tooltip,
@@ -84,6 +90,9 @@ function processingReducer(
 export function Captions() {
 	const [selectedLanguage, setSelectedLanguage] =
 		useState<TranscriptionLanguage>("auto");
+	const [selectedPresetId, setSelectedPresetId] = useState<string>(
+		DEFAULT_CAPTION_PRESET_ID,
+	);
 	const [processing, dispatch] = useReducer(processingReducer, IDLE_STATE);
 	const containerRef = useRef<HTMLDivElement>(null);
 	const fileInputRef = useRef<HTMLInputElement>(null);
@@ -109,9 +118,13 @@ export function Captions() {
 	const insertCaptions = ({
 		captions,
 	}: {
-		captions: CaptionChunk[];
+		captions: SubtitleCue[];
 	}): boolean => {
-		const trackId = insertCaptionChunksAsTextTrack({ editor, captions });
+		const styledCaptions = applyPresetToCaptions(captions, selectedPresetId);
+		const trackId = insertCaptionChunksAsTextTrack({
+			editor,
+			captions: styledCaptions,
+		});
 		return trackId !== null;
 	};
 
@@ -307,7 +320,57 @@ export function Captions() {
 								</SelectContent>
 							</Select>
 						</SectionField>
+						<SectionField label="Creator Style">
+							<Select
+								value={selectedPresetId}
+								onValueChange={(value) => setSelectedPresetId(value)}
+							>
+								<SelectTrigger>
+									<SelectValue placeholder="Select style preset" />
+								</SelectTrigger>
+								<SelectContent>
+									{CAPTION_PRESETS.map((preset) => (
+										<SelectItem key={preset.id} value={preset.id}>
+											<div className="flex items-center gap-2">
+												<span
+													className="text-[10px] font-extrabold px-1.5 py-0.5 rounded border border-border/50"
+													style={{
+														color: preset.preview.textColor,
+														backgroundColor: preset.preview.bgColor,
+													}}
+												>
+													{preset.preview.badgeText}
+												</span>
+												<span className="text-xs">{preset.name}</span>
+											</div>
+										</SelectItem>
+									))}
+								</SelectContent>
+							</Select>
+						</SectionField>
 					</SectionFields>
+
+					<div className="p-3 rounded-lg border border-border/50 bg-secondary/30 flex flex-col items-center justify-center min-h-[70px]">
+						<span className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1.5 font-mono">
+							Creator Subtitle Preview
+						</span>
+						{(() => {
+							const current =
+								CAPTION_PRESETS.find((p) => p.id === selectedPresetId) ??
+								CAPTION_PRESETS[0];
+							return (
+								<div
+									className="px-3 py-1 rounded text-sm font-extrabold shadow-sm transition-all text-center tracking-wide"
+									style={{
+										color: current.style.color,
+										backgroundColor: current.style.background?.color,
+									}}
+								>
+									{current.name.toUpperCase()}
+								</div>
+							);
+						})()}
+					</div>
 
 					<Button
 						type="button"
