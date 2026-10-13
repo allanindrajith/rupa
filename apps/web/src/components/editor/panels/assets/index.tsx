@@ -10,6 +10,7 @@ import { SoundsView } from "./views/sounds";
 import { StickersView } from "./views/stickers";
 import { TextView } from "./views/text";
 import { EffectsView } from "./views/effects";
+import { TtsVoiceoverView } from "./views/tts-view";
 
 export function AssetsPanel() {
 	const { activeTab } = useAssetsPanelStore();
@@ -26,6 +27,7 @@ export function AssetsPanel() {
 			</div>
 		),
 		captions: <Captions />,
+		voiceover: <TtsVoiceoverView />,
 		adjustment: (
 			<div className="text-muted-foreground p-4">
 				Adjustment view coming soon...
