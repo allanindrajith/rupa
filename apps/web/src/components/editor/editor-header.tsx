@@ -29,9 +29,13 @@ import { cn } from "@/utils/ui";
 
 export function EditorHeader() {
 	return (
-		<header className="bg-background flex h-[3.4rem] items-center justify-between px-3 pt-0.5">
-			<div className="flex items-center gap-1">
+		<header className="bg-background flex h-[3.4rem] items-center justify-between px-3 pt-0.5 border-b border-border/40">
+			<div className="flex items-center gap-2">
 				<ProjectDropdown />
+				<div className="flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-secondary/30 border border-border/50 select-none">
+					<span className="text-xs font-bold tracking-tight text-foreground">OpenCut</span>
+					<span className="text-[10px] font-extrabold uppercase px-1 py-0.2 rounded bg-primary text-primary-foreground">Studio</span>
+				</div>
 				<EditableProjectName />
 			</div>
 			<nav className="flex items-center gap-2">

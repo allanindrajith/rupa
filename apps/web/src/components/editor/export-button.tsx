@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TransitionTopIcon } from "@hugeicons/core-free-icons";
+import { TransitionTopIcon, SparklesIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
 	Popover,
@@ -162,6 +162,67 @@ function ExportPopover({
 					<div className="flex flex-col gap-4">
 						{!isExporting && (
 							<>
+								{/* Quick Creator Presets */}
+								<div className="p-3 pb-0 flex flex-col gap-2">
+									<span className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground flex items-center gap-1">
+										<HugeiconsIcon icon={SparklesIcon} size={12} className="text-primary" />
+										1-Click Social Presets:
+									</span>
+									<div className="grid grid-cols-3 gap-1.5">
+										<button
+											type="button"
+											onClick={() => {
+												setFormat("mp4");
+												setQuality("high");
+												setShouldIncludeAudio(true);
+											}}
+											className={cn(
+												"p-1.5 rounded-md border text-left transition-all cursor-pointer",
+												format === "mp4" && quality === "high"
+													? "border-primary bg-primary/10 text-primary"
+													: "border-border/60 hover:bg-secondary/40 text-muted-foreground",
+											)}
+										>
+											<div className="text-[11px] font-bold">TikTok / Shorts</div>
+											<div className="text-[9px] opacity-80">MP4 • 1080p High</div>
+										</button>
+										<button
+											type="button"
+											onClick={() => {
+												setFormat("mp4");
+												setQuality("very_high");
+												setShouldIncludeAudio(true);
+											}}
+											className={cn(
+												"p-1.5 rounded-md border text-left transition-all cursor-pointer",
+												format === "mp4" && quality === "very_high"
+													? "border-primary bg-primary/10 text-primary"
+													: "border-border/60 hover:bg-secondary/40 text-muted-foreground",
+											)}
+										>
+											<div className="text-[11px] font-bold">Ultra / Master</div>
+											<div className="text-[9px] opacity-80">MP4 • Max Quality</div>
+										</button>
+										<button
+											type="button"
+											onClick={() => {
+												setFormat("webm");
+												setQuality("medium");
+												setShouldIncludeAudio(true);
+											}}
+											className={cn(
+												"p-1.5 rounded-md border text-left transition-all cursor-pointer",
+												format === "webm" && quality === "medium"
+													? "border-primary bg-primary/10 text-primary"
+													: "border-border/60 hover:bg-secondary/40 text-muted-foreground",
+											)}
+										>
+											<div className="text-[11px] font-bold">Web Fast Share</div>
+											<div className="text-[9px] opacity-80">WebM • Compact</div>
+										</button>
+									</div>
+								</div>
+
 								<div className="flex flex-col">
 									<Section
 										collapsible
