@@ -45,11 +45,11 @@ export function PreviewToolbar({
 				<Separator orientation="vertical" className="h-4" />
 				<ZoomSelect />
 				<Separator orientation="vertical" className="h-4" />
-				{/* v0.4.0 */}
-				{/* <GridPopover>
+				<GridPopover>
 					<Button
 						variant={activeGuideDefinition ? "secondary" : "text"}
 						size="icon"
+						title="Social Safe Zone & Grid Guides"
 					>
 						{activeGuideDefinition ? (
 							activeGuideDefinition.renderTriggerIcon()
@@ -57,7 +57,7 @@ export function PreviewToolbar({
 							<HugeiconsIcon icon={GridTableIcon} />
 						)}
 					</Button>
-				</GridPopover> */}
+				</GridPopover>
 				<Button variant="text" onClick={onToggleFullscreen}>
 					<HugeiconsIcon icon={FullScreenIcon} />
 				</Button>
