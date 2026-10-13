@@ -14,6 +14,8 @@ describe("Trim Silence from Scene Tracks", () => {
 				id: trackId,
 				name: "Main",
 				type: "video",
+				muted: false,
+				hidden: false,
 				elements: [
 					{
 						id: "elem-1",
@@ -54,6 +56,8 @@ describe("Trim Silence from Scene Tracks", () => {
 				id: "main-1",
 				name: "Main",
 				type: "video",
+				muted: false,
+				hidden: false,
 				elements: [
 					{
 						id: "elem-1",

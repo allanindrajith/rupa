@@ -104,17 +104,20 @@ export function TtsVoiceoverView() {
 			const processedAssets = await processMediaAssets({ files: [file] });
 			if (processedAssets.length > 0 && activeProject) {
 				const asset = processedAssets[0];
-				await editor.media.addMediaAsset({
+				const createdAsset = await editor.media.addMediaAsset({
 					projectId: activeProject.metadata.id,
 					asset,
 				});
+				if (!createdAsset) return;
 
-				const duration = Math.round((asset.duration ?? result.durationSeconds) * TICKS_PER_SECOND);
+				const duration = Math.round(
+					(createdAsset.duration ?? result.durationSeconds) * TICKS_PER_SECOND,
+				);
 				const currentTime = editor.playback.getCurrentTime();
 				const startTime = Math.round(currentTime * TICKS_PER_SECOND);
 
 				const element = buildElementFromMedia({
-					mediaId: asset.id,
+					mediaId: createdAsset.id,
 					mediaType: "audio",
 					name: `Voiceover: ${text.slice(0, 24)}...`,
 					duration,

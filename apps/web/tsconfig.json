@@ -13,6 +13,7 @@
 		"isolatedModules": true,
 		"jsx": "react-jsx",
 		"incremental": true,
+		"allowImportingTsExtensions": true,
 		"plugins": [
 			{
 				"name": "next"
@@ -20,6 +21,7 @@
 		],
 		"paths": {
 			"@/*": ["./src/*"],
+			"#/*": ["./src/*"],
 			"content-collections": ["./.content-collections/generated"]
 		},
 		"forceConsistentCasingInFileNames": true
@@ -35,5 +37,5 @@
 		"src/stores/timeline-store.ts",
 		".next/dev/types/**/*.ts"
 	],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", "src/routes", "src/router.tsx", "src/routeTree.gen.ts"]
 }

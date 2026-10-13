@@ -25,7 +25,7 @@ export const CAPTION_PRESETS: CaptionPreset[] = [
 		style: {
 			fontSize: 7,
 			fontFamily: "Inter",
-			fontWeight: "800",
+			fontWeight: "bold",
 			color: "#FFE600",
 			textAlign: "center",
 			background: {
@@ -33,7 +33,7 @@ export const CAPTION_PRESETS: CaptionPreset[] = [
 				color: "#000000",
 				paddingX: 18,
 				paddingY: 10,
-				borderRadius: 8,
+				cornerRadius: 8,
 			},
 			placement: {
 				verticalAlign: "bottom",
@@ -53,7 +53,7 @@ export const CAPTION_PRESETS: CaptionPreset[] = [
 		style: {
 			fontSize: 6.5,
 			fontFamily: "Inter",
-			fontWeight: "700",
+			fontWeight: "bold",
 			color: "#00FFFF",
 			textAlign: "center",
 			background: {
@@ -61,7 +61,7 @@ export const CAPTION_PRESETS: CaptionPreset[] = [
 				color: "#0B0F19EE",
 				paddingX: 16,
 				paddingY: 8,
-				borderRadius: 6,
+				cornerRadius: 6,
 			},
 			placement: {
 				verticalAlign: "bottom",
@@ -81,7 +81,7 @@ export const CAPTION_PRESETS: CaptionPreset[] = [
 		style: {
 			fontSize: 7.2,
 			fontFamily: "Inter",
-			fontWeight: "800",
+			fontWeight: "bold",
 			color: "#00FF66",
 			textAlign: "center",
 			background: {
@@ -89,7 +89,7 @@ export const CAPTION_PRESETS: CaptionPreset[] = [
 				color: "#000000FA",
 				paddingX: 20,
 				paddingY: 10,
-				borderRadius: 10,
+				cornerRadius: 10,
 			},
 			placement: {
 				verticalAlign: "bottom",
@@ -109,7 +109,7 @@ export const CAPTION_PRESETS: CaptionPreset[] = [
 		style: {
 			fontSize: 5.5,
 			fontFamily: "Inter",
-			fontWeight: "600",
+			fontWeight: "normal",
 			color: "#FFFFFF",
 			textAlign: "center",
 			background: {
@@ -117,7 +117,7 @@ export const CAPTION_PRESETS: CaptionPreset[] = [
 				color: "#00000088",
 				paddingX: 14,
 				paddingY: 6,
-				borderRadius: 6,
+				cornerRadius: 6,
 			},
 			placement: {
 				verticalAlign: "bottom",

@@ -32,9 +32,11 @@ export function AspectRatioSelector() {
 		if (!preset) return;
 
 		editor.project.updateSettings({
-			canvasSize: {
-				width: preset.width,
-				height: preset.height,
+			settings: {
+				canvasSize: {
+					width: preset.width,
+					height: preset.height,
+				},
 			},
 		});
 	};
