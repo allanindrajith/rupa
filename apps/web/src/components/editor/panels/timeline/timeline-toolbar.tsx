@@ -49,6 +49,7 @@ import { OcRippleIcon } from "@/components/icons";
 import { GraphEditorPopover } from "./graph-editor/popover";
 import { PopoverTrigger } from "@/components/ui/popover";
 import { useGraphEditorController } from "./graph-editor/use-controller";
+import { SilenceRemoverPopover } from "./silence-remover-dialog";
 
 export function TimelineToolbar({
 	zoomLevel,
@@ -199,6 +200,8 @@ function ToolbarLeftSection() {
 				/>
 
 				<div className="bg-border mx-1 h-6 w-px" />
+
+				<SilenceRemoverPopover />
 
 				<Tooltip>
 					<ToolbarButton
