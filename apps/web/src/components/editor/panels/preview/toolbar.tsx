@@ -22,6 +22,7 @@ import {
 	SelectItem,
 	SelectSeparator,
 } from "@/components/ui/select";
+import { AspectRatioSelector } from "./aspect-ratio-selector";
 import { PREVIEW_ZOOM_PRESETS } from "@/lib/preview/zoom";
 import { usePreviewViewport } from "./preview-viewport";
 import { GridPopover } from "./guide-popover";
@@ -40,6 +41,8 @@ export function PreviewToolbar({
 			<TimecodeDisplay />
 			<PlayPauseButton />
 			<div className="justify-self-end flex items-center gap-2.5">
+				<AspectRatioSelector />
+				<Separator orientation="vertical" className="h-4" />
 				<ZoomSelect />
 				<Separator orientation="vertical" className="h-4" />
 				{/* v0.4.0 */}
