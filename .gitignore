@@ -5,6 +5,7 @@ target/
 .env.*
 !.env.example
 docs/
+!docs/superpowers/
 
 # moon runtime cache
 .moon/cache/
