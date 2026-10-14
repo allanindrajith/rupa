@@ -1,0 +1,15 @@
+[package]
+name = "media"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Native media probing, video frame decoding, audio mixing, and export pipeline for Rupa."
+
+[dependencies]
+log = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+
+[dev-dependencies]
+tempfile = "3.17"
