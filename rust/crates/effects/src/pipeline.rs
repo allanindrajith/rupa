@@ -42,6 +42,8 @@ pub enum EffectsError {
     },
     #[error("Shader '{shader}' does not support uniform '{uniform}'")]
     UnsupportedUniform { shader: String, uniform: String },
+    #[error("Invalid input: {0}")]
+    InvalidInput(String),
 }
 
 #[repr(C)]
