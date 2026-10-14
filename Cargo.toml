@@ -10,5 +10,6 @@ members = [
     "rust/crates/speech",
     "rust/crates/vision",
     "rust/crates/media",
+    "rust/crates/api",
     "rust/wasm", "rust/crates/compositor",
 ]

@@ -1,0 +1,20 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Headless automation API and Model Context Protocol (MCP) server for Rupa."
+
+[dependencies]
+effects = { path = "../effects" }
+media = { path = "../media" }
+speech = { path = "../speech" }
+vision = { path = "../vision" }
+
+log = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+
+[dev-dependencies]
+tempfile = "3.17"
