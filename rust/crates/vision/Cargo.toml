@@ -1,0 +1,18 @@
+[package]
+name = "vision"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "On-device AI vision, background removal, and smart cutout masks for Rupa."
+
+[dependencies]
+log = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+sha2 = "0.10"
+ureq = "2.10"
+png = "0.17"
+
+[dev-dependencies]
+tempfile = "3.17"

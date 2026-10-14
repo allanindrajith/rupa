@@ -8,5 +8,6 @@ members = [
     "rust/crates/gpu",
     "rust/crates/masks",
     "rust/crates/speech",
+    "rust/crates/vision",
     "rust/wasm", "rust/crates/compositor",
 ]
