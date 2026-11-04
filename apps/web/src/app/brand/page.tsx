@@ -46,24 +46,39 @@ interface AssetSection {
 
 const ASSET_SECTIONS: AssetSection[] = [
 	{
+		title: "App icon",
+		description:
+			"The frame in Ceylon Maroon with the Lotus Gold play button. Use it for app icons, favicons, and avatars.",
+		cols: "1",
+		assets: [
+			{
+				src: "/logos/rupa/icon.svg",
+				theme: "icon",
+				label: "App icon",
+				width: 512,
+				height: 512,
+			},
+		],
+	},
+	{
 		title: "Symbol",
 		description:
-			"Use the symbol on its own when the OpenCut name is already present nearby or space is limited.",
+			"Use the symbol on its own when the Rupa name is already present nearby or space is limited.",
 		cols: "2",
 		assets: [
 			{
-				src: "/logos/opencut/symbol.svg",
+				src: "/logos/rupa/symbol.svg",
 				theme: "dark",
 				label: "Symbol",
-				width: 400,
-				height: 400,
+				width: 512,
+				height: 512,
 			},
 			{
-				src: "/logos/opencut/symbol-light.svg",
+				src: "/logos/rupa/symbol-light.svg",
 				theme: "light",
 				label: "Symbol",
-				width: 400,
-				height: 400,
+				width: 512,
+				height: 512,
 			},
 		],
 	},
@@ -74,31 +89,31 @@ const ASSET_SECTIONS: AssetSection[] = [
 		cols: "2",
 		assets: [
 			{
-				src: "/logos/opencut/logo.svg",
+				src: "/logos/rupa/logo.svg",
 				theme: "dark",
 				label: "Logo",
-				width: 1809,
+				width: 1137,
 				height: 400,
 			},
 			{
-				src: "/logos/opencut/logo-light.svg",
+				src: "/logos/rupa/logo-light.svg",
 				theme: "light",
 				label: "Logo",
-				width: 1809,
+				width: 1204,
 				height: 400,
 			},
 			{
-				src: "/logos/opencut/text.svg",
+				src: "/logos/rupa/text.svg",
 				theme: "dark",
 				label: "Text",
-				width: 1760,
+				width: 673,
 				height: 400,
 			},
 			{
-				src: "/logos/opencut/text-light.svg",
+				src: "/logos/rupa/text-light.svg",
 				theme: "light",
 				label: "Text",
-				width: 1760,
+				width: 740,
 				height: 400,
 			},
 		],
@@ -112,7 +127,7 @@ export default function BrandPage() {
 			title="Brand"
 			description={
 				<>
-					Download OpenCut brand assets for use in your projects.{" "}
+					Download Rupa brand assets for use in your projects.{" "}
 					<Link
 						href="#guidelines"
 						className="underline underline-offset-4"
@@ -173,17 +188,14 @@ export default function BrandPage() {
 				<div className="flex flex-col gap-3">
 					<h2 className="font-semibold text-lg">Usage</h2>
 					<p className="text-muted-foreground text-base leading-relaxed">
-						OpenCut is open source — the code is free to use under its license.
-						That license does not cover the name or logo. You can say you use
-						OpenCut, that your project integrates with OpenCut, or that it was
-						built on top of OpenCut. You cannot name your product OpenCut, imply
-						we made or endorse your product, or use the marks commercially
-						without asking first. For anything unclear, reach out at{" "}
+						Rupa is an open creative studio. You can say you use
+						Rupa or that your project integrates with Rupa.
+						For brand asset inquiries, reach out at{" "}
 						<Link
-							href="mailto:brand@opencut.app"
+							href="mailto:brand@rupa.app"
 							className="underline underline-offset-4"
 						>
-							brand@opencut.app
+							brand@rupa.app
 						</Link>
 						.
 					</p>
@@ -193,10 +205,8 @@ export default function BrandPage() {
 					<h2 className="font-semibold text-lg">What's not allowed</h2>
 					<ul className="text-muted-foreground text-base flex flex-col gap-2 leading-relaxed">
 						{[
-							"Using OpenCut in the name of your product, service, or domain.",
-							"Implying that OpenCut made, sponsors, or endorses your work.",
-							"Using the logo or name on merchandise or commercial marketing.",
-							"Modifying the marks.",
+							"Using Rupa in misleading ways to misrepresent affiliations.",
+							"Modifying the official marks without authorization.",
 						].map((item) => (
 							<li key={item} className="flex gap-2">
 								<span className="mt-0.5 shrink-0">-</span>

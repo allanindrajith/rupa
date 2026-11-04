@@ -23,7 +23,7 @@ describe("TTS Voiceover Service", () => {
 	});
 
 	it("should generate a valid WAV blob with proper RIFF header and duration", async () => {
-		const text = "Welcome to OpenCut Studio. Today we create viral short form content.";
+		const text = "Welcome to Rupa Studio. Today we create viral short form content.";
 		const result = await generateVoiceoverWav({
 			text,
 			voiceId: "hype-creator",

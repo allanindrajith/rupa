@@ -1,15 +1,1 @@
-<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_16_39)">
-<mask id="mask0_16_39" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
-<path d="M400 0H0V400H400V0Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_16_39)">
-<path d="M400 117.163V282.838L282.838 400H117.163L0 282.838V117.163L117.163 0H282.838L400 117.163ZM100 100V300H300V100H100Z" fill="black"/>
-</g>
-</g>
-<defs>
-<clipPath id="clip0_16_39">
-<rect width="400" height="400" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#8D153A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"><polyline points="128,190 128,128 190,128"/><polyline points="322,128 384,128 384,190"/><polyline points="384,322 384,384 322,384"/><polyline points="190,384 128,384 128,322"/></g><polygon points="214,182 340,256 214,330" fill="#F5A623" stroke="#F5A623" stroke-width="30" stroke-linejoin="round"/></svg>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Cancel01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
+import { IS_DESKTOP_APP } from "@/lib/site/app-mode";
 import { getSortedReleases } from "../utils";
 import type { Release } from "../utils";
 
@@ -45,7 +46,8 @@ export function ChangelogNotification() {
 		setRelease(latest);
 	}, []);
 
-	if (!release) return null;
+	// The changelog lives on the website, which the desktop app doesn't include.
+	if (!release || IS_DESKTOP_APP) return null;
 
 	return (
 		<div className="fixed bottom-5 left-5 z-50 flex w-72 flex-col gap-3 rounded-xl border bg-card p-4 shadow-lg">

@@ -18,6 +18,7 @@ import { ExportButton } from "./export-button";
 import { FeedbackPopover } from "@/lib/feedback/components/feedback-popover";
 import { ThemeToggle } from "../theme-toggle";
 import { DEFAULT_LOGO_URL } from "@/lib/site/brand";
+import { IS_DESKTOP_APP } from "@/lib/site/app-mode";
 import { SOCIAL_LINKS } from "@/lib/site/social";
 import { toast } from "sonner";
 import { useEditor } from "@/hooks/use-editor";
@@ -33,7 +34,7 @@ export function EditorHeader() {
 			<div className="flex items-center gap-2">
 				<ProjectDropdown />
 				<div className="flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-secondary/30 border border-border/50 select-none">
-					<span className="text-xs font-bold tracking-tight text-foreground">OpenCut</span>
+					<span className="text-xs font-bold tracking-tight text-foreground">Rupa</span>
 					<span className="text-[10px] font-extrabold uppercase px-1 py-0.2 rounded bg-primary text-primary-foreground">Studio</span>
 				</div>
 				<EditableProjectName />
@@ -121,7 +122,7 @@ function ProjectDropdown() {
 							alt="Project thumbnail"
 							width={32}
 							height={32}
-							className="invert dark:invert-0 size-5"
+							className="size-5"
 						/>
 					</Button>
 				</DropdownMenuTrigger>
@@ -141,17 +142,21 @@ function ProjectDropdown() {
 						Shortcuts
 					</DropdownMenuItem>
 
-					<DropdownMenuSeparator />
+					{!IS_DESKTOP_APP && (
+						<>
+							<DropdownMenuSeparator />
 
-					<DropdownMenuItem asChild icon={<FaDiscord className="size-4!" />}>
-						<Link
-							href={SOCIAL_LINKS.discord}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Discord
-						</Link>
-					</DropdownMenuItem>
+							<DropdownMenuItem asChild icon={<FaDiscord className="size-4!" />}>
+								<Link
+									href={SOCIAL_LINKS.discord}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Discord
+								</Link>
+							</DropdownMenuItem>
+						</>
+					)}
 				</DropdownMenuContent>
 			</DropdownMenu>
 			<RenameProjectDialog

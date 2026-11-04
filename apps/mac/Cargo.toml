@@ -1,0 +1,24 @@
+[package]
+name = "rupa-mac"
+version = "0.1.0"
+edition = "2021"
+description = "Rupa for macOS: a native shell around the Rupa web editor"
+
+# Standalone workspace: keeps Tauri's dependency tree out of the shared Cargo.lock.
+[workspace]
+
+[[bin]]
+name = "rupa-mac"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

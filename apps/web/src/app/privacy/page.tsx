@@ -10,13 +10,13 @@ import { Separator } from "@/components/ui/separator";
 import { SOCIAL_LINKS } from "@/lib/site/social";
 
 export const metadata: Metadata = {
-	title: "Privacy Policy - OpenCut",
+	title: "Privacy Policy - Rupa",
 	description:
-		"Learn how OpenCut handles your data and privacy. Our commitment to protecting your information while you edit videos.",
+		"Learn how Rupa handles your data and privacy. Our commitment to protecting your information while you edit videos.",
 	openGraph: {
-		title: "Privacy Policy - OpenCut",
+		title: "Privacy Policy - Rupa",
 		description:
-			"Learn how OpenCut handles your data and privacy. Our commitment to protecting your information while you edit videos.",
+			"Learn how Rupa handles your data and privacy. Our commitment to protecting your information while you edit videos.",
 		type: "website",
 	},
 };
@@ -49,7 +49,7 @@ export default function PrivacyPage() {
 								too - nothing is uploaded
 							</li>
 							<li>
-								OpenCut does not currently require an account or login
+								Rupa does not currently require an account or login
 							</li>
 							<li>Project data stays on your device, not our servers</li>
 							<li>
@@ -60,13 +60,7 @@ export default function PrivacyPage() {
 							<li>We don't sell or share your data with anyone (we don't even have it)</li>
 						</ol>
 						<p className="mt-4">
-							Questions? Email us at{" "}
-							<a
-								href="mailto:oss@opencut.app"
-								className="text-primary hover:underline"
-							>
-								oss@opencut.app
-							</a>
+							Questions? Contact us through our community channels.
 						</p>
 					</AccordionContent>
 				</AccordionItem>
@@ -88,7 +82,7 @@ export default function PrivacyPage() {
 			<section className="flex flex-col gap-3">
 				<h2 className="text-2xl font-semibold">Accounts & Authentication</h2>
 				<p>
-					OpenCut does not currently offer user accounts, login, or Google
+					Rupa does not currently offer user accounts, login, or Google
 					sign-in.
 				</p>
 				<p>
@@ -139,7 +133,7 @@ export default function PrivacyPage() {
 
 			<section className="flex flex-col gap-3">
 				<h2 className="text-2xl font-semibold">Third-Party Services</h2>
-				<p>OpenCut integrates with these services:</p>
+				<p>Rupa integrates with these services:</p>
 				<ul className="list-disc space-y-2 pl-6">
 					<li>
 						<strong>Vercel:</strong> For hosting and content delivery
@@ -154,7 +148,7 @@ export default function PrivacyPage() {
 				<h2 className="text-2xl font-semibold">Your Rights</h2>
 				<p>You have complete control over your data:</p>
 				<ul className="list-disc space-y-2 pl-6">
-					<li>No account is required to use OpenCut today</li>
+					<li>No account is required to use Rupa today</li>
 					<li>Clear local storage to remove all saved projects</li>
 					<li>Contact us with any privacy concerns</li>
 				</ul>
@@ -163,54 +157,9 @@ export default function PrivacyPage() {
 			<section className="flex flex-col gap-3">
 				<h2 className="text-2xl font-semibold">Open Source Transparency</h2>
 				<p>
-					OpenCut is completely open source. You can review our code, see
+					Rupa is completely open source. You can review our code, see
 					exactly how we handle data, and even self-host the application if you
 					prefer.
-				</p>
-				<p>
-					View our source code on{" "}
-					<a
-						href={SOCIAL_LINKS.github}
-						target="_blank"
-						rel="noopener"
-						className="text-primary hover:underline"
-					>
-						GitHub
-					</a>
-					.
-				</p>
-			</section>
-
-			<section className="flex flex-col gap-3">
-				<h2 className="text-2xl font-semibold">Contact Us</h2>
-				<p>Questions about this privacy policy or how we handle your data?</p>
-				<p>
-					Open an issue on our{" "}
-					<a
-						href={`${SOCIAL_LINKS.github}/issues`}
-						target="_blank"
-						rel="noopener"
-						className="text-primary hover:underline"
-					>
-						GitHub repository
-					</a>
-					, email us at{" "}
-					<a
-						href="mailto:oss@opencut.app"
-						className="text-primary hover:underline"
-					>
-						oss@opencut.app
-					</a>
-					, or reach out on{" "}
-					<a
-						href={SOCIAL_LINKS.x}
-						target="_blank"
-						rel="noopener"
-						className="text-primary hover:underline"
-					>
-						X (Twitter)
-					</a>
-					.
 				</p>
 			</section>
 

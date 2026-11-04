@@ -55,7 +55,7 @@ const SAMPLE_SCRIPTS = [
 
 export function TtsVoiceoverView() {
 	const [text, setText] = useState(
-		"Welcome to OpenCut Studio! Type any script here to generate a custom voiceover directly on your timeline.",
+		"Welcome to Rupa Studio! Type any script here to generate a custom voiceover directly on your timeline.",
 	);
 	const [selectedVoiceId, setSelectedVoiceId] = useState("storyteller");
 	const [speed, setSpeed] = useState(1.0);

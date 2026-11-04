@@ -1,18 +1,18 @@
 <table width="100%">
   <tr>
     <td align="left" width="120">
-      <img src="apps/web/public/logos/opencut/icon.svg" alt="OpenCut Logo" width="100" />
+      <img src="apps/web/public/logos/rupa/icon.svg" alt="Rupa Logo" width="100" />
     </td>
     <td align="right">
-      <h1>OpenCut</h1>
-      <h3 style="margin-top: -10px;">A free, open-source video editor for web, desktop, and mobile.</h3>
+      <h1>Rupa</h1>
+      <h3 style="margin-top: -10px;">A fast, privacy-first video editor for web and desktop.</h3>
     </td>
   </tr>
 </table>
 
 ## Sponsors
 
-Thanks to [Vercel](https://vercel.com?utm_source=github-opencut&utm_campaign=oss) and [fal.ai](https://fal.ai?utm_source=github-opencut&utm_campaign=oss) for their support of open-source software.
+Thanks to [Vercel](https://vercel.com) and [fal.ai](https://fal.ai) for their support.
 
 <a href="https://vercel.com/oss">
   <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
@@ -148,7 +148,3 @@ See our [Contributing Guide](.github/CONTRIBUTING.md) for detailed setup instruc
 ## License
 
 [MIT LICENSE](LICENSE)
-
----
-
-![Star History Chart](https://api.star-history.com/svg?repos=opencut-app/opencut&type=Date)

@@ -1,21 +1,20 @@
-# OpenCut Creator Studio Implementation Plan
+# Rupa Creator Studio Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Transform the repository into OpenCut Creator Studio by importing the working OpenCut-0.3.0 base, running client-first without Docker, and delivering short-form aspect ratios, safe-zone overlays, AI auto-captions, TTS voiceovers, silence trimming, and an Obsidian Studio UI reskin.
+**Goal:** Transform the repository into Rupa Creator Studio, running client-first without Docker, and delivering short-form aspect ratios, safe-zone overlays, AI auto-captions, TTS voiceovers, silence trimming, and an Obsidian Studio UI reskin.
 
 **Architecture:** Next.js 16 with Turbopack and React 19; client-side media storage using OPFS and IndexedDB; WebCodecs and MediaBunny canvas compositing; Whisper WebWorker transcription; Web Speech/Edge synthesis for TTS; Zustand state management for timeline, preview, and properties.
 
 **Tech Stack:** Next.js 16, React 19, Tailwind CSS v4, Radix UI, Zustand, MediaBunny, WebCodecs, `@huggingface/transformers` (Whisper), Web Speech API, Bun.
 
-**Spec:** [`docs/superpowers/specs/2026-10-13-opencut-custom-studio-design.md`](file:///Users/allanindrajith/Github%20Project/OpenCut/docs/superpowers/specs/2026-10-13-opencut-custom-studio-design.md)
+**Spec:** [`docs/superpowers/specs/2026-10-13-opencut-custom-studio-design.md`](file:///Users/allanindrajith/Github%20Project/Rupa/docs/superpowers/specs/2026-10-13-opencut-custom-studio-design.md)
 
 ## Global Constraints
 
-- Must import and build upon `~/Downloads/OpenCut-0.3.0` codebase.
 - No mandatory background Docker/Postgres/Redis services required to run, edit, or export videos locally.
 - All media and timeline data must remain 100% client-side (OPFS / IndexedDB) with zero remote telemetry.
-- Brand name remains OpenCut Studio for this release.
+- Brand name is Rupa Studio.
 - Editor must support 9:16, 1:1, 4:5, and 16:9 canvas aspect ratios.
 - Safe-zone overlays must cover TikTok, Instagram Reels, and YouTube Shorts.
 
@@ -32,7 +31,7 @@
 ### Task 1: Codebase Ingestion & Standalone Local Environment Setup
 
 **Files:**
-- Modify: Root workspace (`/Users/allanindrajith/Github Project/OpenCut`)
+- Modify: Root workspace (`/Users/allanindrajith/Github Project/Rupa`)
 - Modify: `apps/web/package.json`
 - Modify: `apps/web/.env.example` -> `apps/web/.env.local`
 
@@ -40,8 +39,8 @@
 - Consumes: `~/Downloads/OpenCut-0.3.0` source tree
 - Produces: Runnable standalone monorepo with `apps/web`, `rust/`, root configurations, and dependencies installed via Bun.
 
-- [ ] **Step 1: Synchronize OpenCut-0.3.0 files into workspace**
-  Sync all directories and files from `~/Downloads/OpenCut-0.3.0` into `/Users/allanindrajith/Github Project/OpenCut` (excluding `.git` from downloads).
+- [ ] **Step 1: Synchronize Rupa-0.3.0 files into workspace**
+  Sync all directories and files from `~/Downloads/OpenCut-0.3.0` into `/Users/allanindrajith/Github Project/Rupa` (excluding `.git` from downloads).
 - [ ] **Step 2: Configure local environment file**
   Create `apps/web/.env.local` with local development fallback settings disabling mandatory cloud auth and remote databases.
 - [ ] **Step 3: Install dependencies**
@@ -51,7 +50,7 @@
 - [ ] **Step 5: Commit**
   ```bash
   git add -A
-  git commit -m "feat: ingest OpenCut-0.3.0 base and configure standalone local setup"
+  git commit -m "feat: ingest Rupa-0.3.0 base and configure standalone local setup"
   ```
 
 ---
@@ -262,7 +261,7 @@
 - [ ] **Step 1: Update design tokens in CSS and timeline theme**
   Apply obsidian dark background, high-contrast cyan/indigo active states, and refined track separators.
 - [ ] **Step 2: Refine `editor-header.tsx` branding**
-  Display "OpenCut Studio" badge with clean creator icon and status indicator.
+  Display "Rupa Studio" badge with clean creator icon and status indicator.
 - [ ] **Step 3: Expand `export-button.tsx` with one-click social presets**
   Add direct export profiles for TikTok/Reels (1080x1920 @ 60fps), YouTube (1080p @ 60fps), and Animated GIF.
 - [ ] **Step 4: Verify UI appearance and export dialog functionality**
@@ -297,5 +296,5 @@
 - [ ] **Step 4: Final commit**
   ```bash
   git add -A
-  git commit -m "chore: complete OpenCut Creator Studio integration and verification"
+  git commit -m "chore: complete Rupa Creator Studio integration and verification"
   ```

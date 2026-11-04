@@ -13,9 +13,9 @@ const webEnvSchema = z.object({
 	// Server
 	DATABASE_URL: z
 		.string()
-		.default("postgresql://opencut:opencut@localhost:5432/opencut"),
+		.default("postgresql://rupa:rupa@localhost:5432/rupa"),
 
-	BETTER_AUTH_SECRET: z.string().default("standalone-secret-opencut-studio"),
+	BETTER_AUTH_SECRET: z.string().default("standalone-secret-rupa-studio"),
 	UPSTASH_REDIS_REST_URL: z.string().default("http://localhost:8079"),
 	UPSTASH_REDIS_REST_TOKEN: z.string().default("local-token"),
 	MARBLE_WORKSPACE_KEY: z.string().default("local-marble-key"),

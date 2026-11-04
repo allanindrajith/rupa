@@ -2,7 +2,7 @@
 
 ## Pre-flight
 - Pre-flight: scan complete. Tasks 1 to 8 defined in sequential order.
-- Task 1: complete (commit: feat: ingest OpenCut-0.3.0 base and configure standalone local setup, bun install verified)
+- Task 1: complete (commit: feat: ingest Rupa-0.3.0 base and configure standalone local setup, bun install verified)
 - Task 2: complete (commit: feat: add social aspect ratio switcher, tests: bun test aspect-ratios.test.ts -> 4/4 pass)
 - Task 3: complete (commit bc734102: feat(preview): add interactive social safe-zone overlays for Reels and Shorts, tests: 2/2 pass)
 - Task 4: complete (commit 69223eb9: feat(captions): add AI auto-caption creator presets and live style picker, tests: 3/3 pass)

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rupa</title>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: #1b1014;
+        color: #fbf6ee;
+        font: 14px -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      body {
+        display: grid;
+        place-items: center;
+      }
+      .stack {
+        display: grid;
+        gap: 16px;
+        justify-items: center;
+        opacity: 0.9;
+      }
+      .icon {
+        width: 96px;
+        height: 96px;
+        animation: pulse 1.4s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        50% { transform: scale(0.94); opacity: 0.7; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stack">
+      <svg class="icon" viewBox="0 0 512 512" fill="none">
+        <rect width="512" height="512" rx="112" fill="#8D153A" />
+        <g stroke="#FBF6EE" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="128,190 128,128 190,128" />
+          <polyline points="322,128 384,128 384,190" />
+          <polyline points="384,322 384,384 322,384" />
+          <polyline points="190,384 128,384 128,322" />
+        </g>
+        <polygon points="214,182 340,256 214,330" fill="#F5A623" stroke="#F5A623" stroke-width="30" stroke-linejoin="round" />
+      </svg>
+      <div id="status">Starting Rupa…</div>
+    </div>
+  </body>
+</html>

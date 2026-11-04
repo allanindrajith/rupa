@@ -1,17 +1,16 @@
-# Design Specification: OpenCut Creator Studio (Custom Version)
+# Design Specification: Rupa Creator Studio (Custom Version)
 
 **Date:** 2026-10-13  
 **Status:** Approved by User  
-**Foundation Base:** `OpenCut-0.3.0` (from `~/Downloads/OpenCut-0.3.0`)  
-**Target Repository:** `/Users/allanindrajith/Github Project/OpenCut`
+**Target Repository:** `/Users/allanindrajith/Github Project/Rupa`
 
 ---
 
 ## 1. Executive Summary
 
-This specification outlines the architecture, component structure, data flow, and feature enhancements for **OpenCut Creator Studio**—a custom, privacy-focused, browser-based video editing suite designed specifically for modern short-form and general content creators. 
+This specification outlines the architecture, component structure, data flow, and feature enhancements for **Rupa Creator Studio**—a custom, privacy-focused, browser-based video editing suite designed specifically for modern short-form and general content creators. 
 
-While preserving the battle-tested multi-track engine from OpenCut v0.3.0 (Next.js, Turbopack, WebCodecs, MediaBunny, WASM compositor, and WebWorker Whisper transcription), this custom version transforms the experience by introducing:
+While preserving the battle-tested multi-track engine (Next.js, Turbopack, WebCodecs, MediaBunny, WASM compositor, and WebWorker Whisper transcription), this custom version transforms the experience by introducing:
 1. **Zero-Docker local-first architecture:** Runs entirely in the client with IndexedDB and OPFS storage; no database or Redis setup required for desktop or local web development.
 2. **Short-Form & Social Media Creator Suite:** Instant aspect ratio presets (9:16 vertical, 1:1 square, 4:5 portrait, 16:9 landscape) paired with interactive UI Safe-Zone Overlays for TikTok, Instagram Reels, and YouTube Shorts.
 3. **AI Captioning & Subtitle Styles:** Automatic audio-to-text pipeline that generates synchronized, editable subtitle tracks with creator-tier typographic presets (e.g. MrBeast-style bold yellow, high-contrast outlines, animations).
@@ -24,14 +23,14 @@ While preserving the battle-tested multi-track engine from OpenCut v0.3.0 (Next.
 ## 2. Base Codebase Ingestion & Structure
 
 ### 2.1 Synchronization Strategy
-The current repository root (`/Users/allanindrajith/Github Project/OpenCut`) was initialized with an early rewrite scaffold where the editor is incomplete. We will ingest the complete working application from `~/Downloads/OpenCut-0.3.0`, synchronizing the full working tree:
+The current repository root (`/Users/allanindrajith/Github Project/Rupa`) was initialized with an early rewrite scaffold where the editor is incomplete. We will ingest the complete working application from `~/Downloads/OpenCut-0.3.0`, synchronizing the full working tree:
 * Root configuration: `package.json`, `bun.lock`, `turbo.json`, `biome.json`, `tsconfig.json`.
 * `apps/web`: The Next.js 16 / React 19 web application containing the complete timeline, canvas renderer, dialogs, and components.
 * `rust/`: The GPU compositor and WASM build pipeline used by `opencut-wasm`.
 * `docs/`: System documentation and architectural references.
 
 ### 2.2 Decoupled Local-First Mode
-In standard OpenCut 0.3.0, server-side auth (BetterAuth) and cloud project syncing rely on PostgreSQL and Redis via Docker Compose. For this custom edition:
+In standard upstream 0.3.0, server-side auth (BetterAuth) and cloud project syncing rely on PostgreSQL and Redis via Docker Compose. For this custom edition:
 * All editor routes (`/editor`, `/`) check for local storage / IndexedDB as the primary persistence layer.
 * Serverless/database checks are non-blocking; the application initializes in standalone offline mode with full editing, caching, and export functionality without running Docker.
 
@@ -175,7 +174,7 @@ graph TD
 ## 7. Verification & Acceptance Criteria
 
 1. **Codebase Migration:**
-   * All directories from `~/Downloads/OpenCut-0.3.0` copied and verified in `/Users/allanindrajith/Github Project/OpenCut`.
+   * All directories from `~/Downloads/OpenCut-0.3.0` copied and verified in `/Users/allanindrajith/Github Project/Rupa`.
    * Project installs cleanly via `bun install`.
    * Dev server boots successfully via `bun dev` (or `bun dev:web`) without requiring Docker/Redis.
 2. **Functional Editor Verification:**

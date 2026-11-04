@@ -7,9 +7,16 @@ import { TooltipProvider } from "../components/ui/tooltip";
 import { baseMetaData } from "./metadata";
 import { BotIdClient } from "botid/client";
 import { webEnv } from "@/lib/env/web";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
-const siteFont = Inter({ subsets: ["latin"] });
+// Bundled (not next/font/google) so builds and the desktop app work offline.
+const siteFont = localFont({
+	src: [
+		{ path: "./fonts/inter-latin-wght-normal.woff2", weight: "100 900" },
+		{ path: "./fonts/inter-latin-ext-wght-normal.woff2", weight: "100 900" },
+	],
+	display: "swap",
+});
 
 export const metadata = baseMetaData;
 

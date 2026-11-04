@@ -15,6 +15,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useEditor } from "@/hooks/use-editor";
+import { IS_DESKTOP_APP } from "@/lib/site/app-mode";
 import { useProjectsStore } from "./store";
 import type {
 	TProjectMetadata,
@@ -146,14 +147,18 @@ function ProjectsHeader() {
 				<div className="flex items-center gap-5">
 					<Breadcrumb>
 						<BreadcrumbList>
-							<BreadcrumbItem>
-								<BreadcrumbLink asChild>
-									<Link href="/" className="text-sm sm:text-base">
-										Home
-									</Link>
-								</BreadcrumbLink>
-							</BreadcrumbItem>
-							<BreadcrumbSeparator />
+							{!IS_DESKTOP_APP && (
+								<>
+									<BreadcrumbItem>
+										<BreadcrumbLink asChild>
+											<Link href="/" className="text-sm sm:text-base">
+												Home
+											</Link>
+										</BreadcrumbLink>
+									</BreadcrumbItem>
+									<BreadcrumbSeparator />
+								</>
+							)}
 							<BreadcrumbItem>
 								<BreadcrumbPage className="text-sm sm:text-base font-medium">
 									All projects

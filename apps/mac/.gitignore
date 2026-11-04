@@ -1,0 +1,5 @@
+target/
+server-bundle/
+binaries/
+gen/
+icon-build/

@@ -1,41 +1,39 @@
 use gpui::{
-    App, Application, Bounds, Context, SharedString, Window, WindowBounds, WindowOptions, div,
-    prelude::*, px, rgb, size,
+    px, size, App, AppContext, Application, Bounds, SharedString, TitlebarOptions, WindowBounds,
+    WindowOptions,
 };
 
-struct AppWindow {
-    title: SharedString,
-}
+mod components;
+mod panels;
+mod shell;
+mod theme;
 
-impl Render for AppWindow {
-    fn render(&mut self, _window: &mut Window, _cx: &mut Context<Self>) -> impl IntoElement {
-        div()
-            .size_full()
-            .bg(rgb(0x0f0f0f))
-            .flex()
-            .justify_center()
-            .items_center()
-            .text_xl()
-            .text_color(rgb(0xffffff))
-            .child(self.title.clone())
-    }
-}
+use shell::Shell;
 
 fn main() {
     Application::new().run(|cx: &mut App| {
         let bounds = Bounds::centered(None, size(px(1280.), px(720.)), cx);
         cx.open_window(
             WindowOptions {
+                titlebar: Some(TitlebarOptions {
+                    title: Some(SharedString::from("Rupa")),
+                    ..Default::default()
+                }),
                 window_bounds: Some(WindowBounds::Windowed(bounds)),
                 ..Default::default()
             },
-            |_, cx| {
-                cx.new(|_| AppWindow {
-                    title: "OpenCut".into(),
+            |window, cx| {
+                cx.new(|cx| {
+                    cx.observe_window_appearance(window, |_, window, _| {
+                        window.refresh();
+                    })
+                    .detach();
+
+                    Shell::new(cx)
                 })
             },
         )
-        .unwrap();
-        cx.activate(true);
+        .expect("failed to open the main window");
     });
 }
+
