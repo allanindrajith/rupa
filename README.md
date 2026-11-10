@@ -10,6 +10,8 @@
   </tr>
 </table>
 
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-a3e635?style=flat&logo=buymeacoffee&logoColor=000000)](https://www.buymeacoffee.com/allanidrajith)
+
 ## Sponsors
 
 Thanks to [Vercel](https://vercel.com) and [fal.ai](https://fal.ai) for their support.
